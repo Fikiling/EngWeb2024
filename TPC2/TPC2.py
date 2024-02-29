@@ -50,13 +50,16 @@ for cidade in content['cidades']:
     
     templateCidade = template
     templateCidade += f'<h1>Nome: {cidade["nome"]}</h1>'
-    templateCidade += f'<h3>ID: {cidade["id"]}</h3>'
+    templateCidade += f'<h3>ID Cidade: {cidade["id"]}</h3>'
     templateCidade += f'<p><b>Distrito: {cidade["distrito"]}</b></p>'
     templateCidade += f'<p><b>Descrição: {cidade["descrição"]}</b></p>'
     templateCidade += f'<p><b>População: {cidade["população"]}</b></p>'
-    if ligacoes[ligacoes['id']] in  ligacoes:
-        for elem in ligacoes[ligacoes['id']]:
-            templateCidade += f'<p><b>Ligação: <a href="html/{elem[0]}style="text-decoration: none;">  - Distância: {elem[1]}</b></p>'
+    if cidade['id'] in  ligacoes:
+        lista_tuplos = ligacoes[cidade['id']]
+        for elem in lista_tuplos:
+            cidade_nome= elem[0]
+            distancia = elem[1]
+            templateCidade += f'<p><b>Caminho para: <a href="{cidade_nome}.html" style="text-decoration: none;">{cidade_nome}</a>  - Distância: {distancia}</b></p>'
 
     templateCidade += f'<h6><a href="../index.html">Voltar à página principal</a></h6>'
     templateCidade += '</body>'
