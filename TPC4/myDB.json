@@ -1343,6 +1343,14 @@
       "dataNasc": "1688-10-17",
       "dataObito": "1726-01-02",
       "periodo": "Barroco"
+    },
+    {
+      "id": "C79400",
+      "nome": "Samantinha <3",
+      "bio": "Uma artista, capaz de fazer musica com a propria boca, não é para qualquer gosto musical ",
+      "dataNasc": "2002-04-09",
+      "dataObito": "",
+      "periodo": "Serialista"
     }
   ],
   "Periodos": [
@@ -1360,7 +1368,11 @@
     },
     {
       "id": "P4",
-      "Designacao": "ada"
+      "Designacao": "Serialista"
+    },
+    {
+      "id": "P5",
+      "Designacao": "Medieval"
     }
   ]
 }
