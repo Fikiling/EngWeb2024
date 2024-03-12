@@ -1,0 +1,28 @@
+extends layout 
+
+block content 
+    .container 
+        header.header 
+            h2 Compositor #{compositor.id}
+
+        .w3-container 
+            ul.w3-ul(style="width: 50%;")
+                li.w3-sand 
+                    b Nome: #{compositor.nome}
+                li.w3-sand
+                    b Id: #{compositor.id}
+                li.w3-sand
+                    b Data de Nascimento: #{compositor.dataNasc}
+                li.w3-sand
+                    b Data de Óbito: #{compositor.dataObito}
+                li.w3-sand
+                    b Período: #{compositor.periodo}
+                li.w3-sand
+                    b Bio: 
+                        span bio #{compositor.bio}
+        
+        footer.footer 
+            address
+                span Gerado por a100696::EngWeb2024 em #{data} - [
+                a(href="/") Voltar
+                span ]
