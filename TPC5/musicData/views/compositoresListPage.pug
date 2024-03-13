@@ -27,7 +27,8 @@ block content
                         td.w3-pale-blue.bio= compositor.bio
                         td.w3-pale-red= compositor.dataNasc
                         td.w3-pale-red= compositor.dataObito
-                        td.w3-lime= compositor.periodo
+                        td.w3-lime
+                            a(href='/periodos/')= compositor.periodo
                         td.w3-deep-orange 
                             span [
                             a(href='/compositores/edit/' + compositor.id) Edit
