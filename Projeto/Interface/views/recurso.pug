@@ -1,0 +1,108 @@
+extends layout
+
+block content
+    // Fundo e navbar
+    include componentes/navbar
+    div.um-fundo
+
+    // Header
+    .w3-card-4
+        header.w3-container.w3-white.header-flex
+            h1.header-title.regular Plataforma de Gestão e Disponibilização de Recursos Educativos
+            img.header-logo(src="/imagens/umLogo.png" alt="Uminho logo")
+
+    // Conteudo da pagina
+    div.conteudo 
+        // Caixa 
+        div.w3-white.caixanormal.arredondado
+            
+            .w3-container
+                h1.regular Visualizar recurso
+                fieldset
+                    legend.regular= title
+                    .modal(id="display")
+                    
+                    p.regular
+                        strong Tipo: 
+                        |  #{item.tipo}
+
+                    p.regular
+                        strong Titulo:
+                        |  #{item.titulo}
+
+                    p.regular
+                        strong Subtitulo:
+                        |  #{item.subtitulo}
+
+                    p.regular
+                        strong Data de Criacao:
+                        |  #{item.dataCriacao}
+
+                    p.regular
+                        strong Data de Registo:
+                        |  #{item.dataRegisto}
+                    
+                    p.regular
+                        strong Acesso:
+                        |  #{item.visibilidade}
+                    
+                    p.regular
+                        strong Autor:
+                        |  #{item.autor}
+
+                    p.regular
+                        .w3-text-yellow
+                            p Rating: #{mediaRating} estrelas
+
+                    a.w3-button.w3-green.tmargin15(href=`http://localhost:29051/recursos/download/tudo/${item.autor}/${item._id}`) Download ZIP
+
+                div.flexivel.tmargin15
+                    p.regular.rmargin15
+                        strong Avaliar o Recurso (1-5 estrelas):
+
+                    form(action="/recursos/avaliar/"+item._id,method="post")
+                        div.flexivel
+                            div.caixacolunacentrada.rmargin20
+                                label.regular 1
+                                input(type="radio" name="rating" id="1-stars" value=1)
+                            div.caixacolunacentrada.rmargin20
+                                label.regular 2
+                                input(type="radio" name="rating" id="2-stars" value=2)
+                            div.caixacolunacentrada.rmargin20
+                                label.regular 3
+                                input(type="radio" name="rating" id="3-stars" value=3)
+                            div.caixacolunacentrada.rmargin20
+                                label.regular 4
+                                input(type="radio" name="rating" id="4-stars" value=4)
+                            div.caixacolunacentrada.rmargin20
+                                label.regular 5
+                                input(type="radio" name="rating" id="5-stars" value=5)
+                            button#submitButton.w3-btn.w3-green.w3-mb-2(type='submit') Avaliar
+
+    // Footer
+    include componentes/rodape
+
+
+    script.
+      // Função para verificar se algum rádio está selecionado
+      function checkRadioButtons() {
+          const radioButtons = document.querySelectorAll('input[name="rating"]');
+          let isChecked = false;
+          radioButtons.forEach((radio) => {
+              if (radio.checked) {
+                  isChecked = true;
+              }
+          });
+
+          const submitButton = document.getElementById('submitButton');
+          submitButton.style.display = isChecked ? 'block' : 'none';
+      }
+
+      // Adicionar evento aos rádios
+      const radioButtons = document.querySelectorAll('input[name="rating"]');
+      radioButtons.forEach((radio) => {
+          radio.addEventListener('change', checkRadioButtons);
+      });
+
+      // Verificação inicial (caso já haja um rádio selecionado)
+      document.addEventListener('DOMContentLoaded', checkRadioButtons);

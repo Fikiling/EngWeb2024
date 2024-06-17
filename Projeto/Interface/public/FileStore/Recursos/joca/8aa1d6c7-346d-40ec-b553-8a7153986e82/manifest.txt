@@ -1,0 +1,14 @@
+[
+  {
+    "filename": "Recurso2122PLex1.png",
+    "hash": "6059ef4e04cca7f7639a82689125f95077f6a0b0110e644a87ede1d1632f4cd0"
+  },
+  {
+    "filename": "Screenshot from 2024-05-07 10-24-06.png",
+    "hash": "868870877b47c4703c6250c18696f7ee05bc6741d2b82fb81814839910478af6"
+  },
+  {
+    "filename": "manifest.txt",
+    "hash": "d1dcfbe408eaeababc046443dede287ddba8ec0fd0c4525f3eb68ce6abe92c84"
+  }
+]

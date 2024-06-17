@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    // Fundo e navbar
+    include componentes/navbar
+    div.um-fundo
+    
+    // Header
+    .w3-card-4
+        header.w3-container.w3-white.header-flex
+            h1.header-title.regular Plataforma de Gestão e Disponibilização de Recursos Educativos
+            img.header-logo(src="/imagens/umLogo.png" alt="Uminho logo")
+
+    // Conteudo da pagina
+    div.conteudo 
+        // Caixa 
+        div.w3-white.caixanormal.arredondado
+            .w3-container
+                form.w3-container.regular(action='/posts/comentario/'+id, method='post', enctype='multipart/form-data')
+                    h1 Comentar post
+                    p= title
+                    div.flexivel
+                        textarea.expandido.rmargin15.tmargin15(id="conteudo" name="conteudo" required)
+                        button.w3-btn.w3-green.w3-mb-2.tmargin15(type='submit') Upload
+        
+    // Footer
+    include componentes/rodape

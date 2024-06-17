@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    // Fundo e navbar
+    include componentes/navbar
+    div.um-fundo
+
+    // Header
+    .w3-card-4
+        header.w3-container.w3-white.header-flex
+            h1.header-title.regular Plataforma de Gestão e Disponibilização de Recursos Educativos
+            img.header-logo(src="/imagens/umLogo.png" alt="Uminho logo")
+
+    // Conteudo da pagina
+    div.conteudo 
+        // Caixa 
+        div.w3-white.caixacentrada.arredondado
+            if(!logado)
+                form.w3-container(method='POST' action='/registar')
+                    h1.regular Registo
+                    label Username
+                    input.w3-input(type="text" name="username")
+                    label Password
+                    input.w3-input(type="password" name="password")
+                    label Nome
+                    input.w3-input(type="text" name="name")
+                    label Email
+                    input.w3-input(type="text" name="email")
+                    label Filiação
+                    select.w3-select.w3-border(name="filiacao")
+                        option(value='estudante') Estudante
+                        option(value='docente') Docente
+                        option(value='curso') Curso
+                        option(value='departamento') Departamento
+
+                    if(failVazio)
+                        p(style="color:red;") Campos vazios!
+                    if(failRegisto)
+                        p(style="color:red;") Erro ao realizar registo!
+                    if(failUser)
+                        p(style="color:red;") Username já existente!
+                    
+                    div.conteudo
+                        button.w3-btn.w3-green.w3-mb-2(type='submit') Registar
+            else
+                h5.regular.rmargin15 Não pode registar-se ao estar logado!
+                a.w3-button.w3-black(href="/") Ir para a página principal
+
+
+    // Footer
+    include componentes/rodape

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    // Fundo e navbar
+    include componentes/navbar
+    div.um-fundo
+    
+    // Header
+    .w3-card-4
+        header.w3-container.w3-white.header-flex
+            h1.header-title.regular Plataforma de Gestão e Disponibilização de Recursos Educativos
+            img.header-logo(src="/imagens/umLogo.png" alt="Uminho logo")
+    
+    // Conteudo da pagina
+    div.conteudo 
+        // Caixa 
+        div.w3-white.caixacentrada.arredondado
+            if(!logado)
+                form.w3-container(method='POST' action='/login')
+                    h1.regular Login
+                    label Username
+                    input.w3-input(type="text" name="username")
+                    label Password
+                    input.w3-input(type="password" name="password")
+                    
+                    if(failVazio)
+                        p(style="color:red;") Campos vazios!
+                    if(failLogin)
+                        p(style="color:red;") Login errado!
+
+                    div.conteudo
+                        button.w3-btn.w3-green.w3-margin-top(type='submit') Login
+            else
+                h2.regular.rmargin15 Já está logado!
+                a.w3-button.w3-black(href="/") Ir para a página principal
+        
+    // Footer
+    include componentes/rodape

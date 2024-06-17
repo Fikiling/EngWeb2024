@@ -1,0 +1,273 @@
+/* NAO MEXER NESTA PARTE SENAO DESTROI AS PAGINAS TODAS PLS */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+/*----------------------------------------------------------------------------------------------------------*/
+/* Usado para o fundo das paginas */
+.um-fundo {
+  position: fixed;
+  top: 0;
+  left: -20px;
+  width: 120%;
+  height: 120%;
+  background-image: url('/imagens/um.jpg'); /* Adjust the path to your image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(14px); /* Adjust the blur amount as needed */
+  z-index: -1; /* Ensure the image is behind other content */
+}
+
+/*----------------------------------------------------- FONTES -----------------------------------------------------*/
+@font-face {
+  font-family: 'LemonMilk';
+  src: url('/fontes/lemonmilk.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.lemonmilk {
+  font-family: 'LemonMilk', sans-serif;
+}
+
+@font-face {
+  font-family: 'Classica';
+  src: url('/fontes/classica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.classica {
+  font-family: 'Classica', sans-serif;
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('/fontes/regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.regular {
+  font-family: 'Regular', sans-serif;
+}
+
+/*----------------------------------------------------- HEADER -----------------------------------------------------*/
+/* Estilo para o header como flex container */
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Adicione preenchimento conforme necessário */
+}
+
+/* Estilo para a logo no header */
+.header-logo {
+    height: 50px; /* Ajuste a altura conforme necessário */
+    width: auto;
+}
+
+/* Estilo para o header como flex container */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; 
+}
+
+/*----------------------------------------------------- Estilo para o título no header -----------------------------------------------------*/
+/* Este estilo é usado no titlo da barra de cima */
+.header-title {
+  margin: 0;
+  flex: 1;
+}
+
+/* Este estilo é usado no logo da universidade */
+.header-logo {
+  height: 50px;
+  width: auto;
+}
+
+/*----------------------------------------------------- Estilo para caixas -----------------------------------------------------*/
+/* Isto é usado em uma caixa para centralizar o conteudo*/
+.caixacentrada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 60vh;
+}
+
+/* Isto é usado em uma caixa, faz com que o conteudo fique la dentro com espaço até as bordas*/
+.caixanormal{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 60vh;
+}
+
+/* Isto é usado em uma caixa, faz com que o conteudo fique la dentro com espaço até as bordas*/
+.caixanormalgorda{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 190vh;
+  margin-bottom: 20px;
+}
+
+/* Isto é usado em uma caixa, faz com que o conteudo fique la dentro com espaço até as bordas*/
+.caixanormalgorda{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 190vh;
+}
+
+/* Isto é usado em uma caixa, faz com que o conteudo fique la dentro com espaço até as bordas*/
+.caixabloco{
+  display:block; 
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.caixacolunacentrada {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Usado em butões */
+.retangulo{
+  width: 200px;
+  height: 50px;
+}
+
+.quadrado{
+  width: 50px;
+  height: 50px;
+}
+
+.mlauto {margin-left: auto;}
+.flexivel{display: flex;}
+.bloco{display: block;}
+
+/* Estilo mais preguiçoso de sempre mas funciona */
+.arredondado {border-radius: 10px; }
+
+/* Este estilo é mt importante, é usado nas divs para centralizar */
+.conteudo{
+  margin-top:30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* É uma caixa bonita com borda preta e arredondada, é muito fixe (Usado na pagina dos posts)*/
+.caixafixe {
+  border: 2px solid black;
+  background-color: #feff9c;
+  border-radius: 10px; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+.postsize {
+  width: 340px;
+  height: 240px;
+}
+
+.expandido {
+  width: 300px;
+}
+
+.fontegrande {
+  font-size: 20px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.fixo {
+  position: fixed;
+}
+
+/* Usei isto porque fica mais fixe */
+.rmargin20{margin-right: 20px;}
+.lmargin20{margin-left: 20px;}
+.rpad20{padding-right: 20px;}
+.lpad20{padding-left: 20px;}
+.tmargin20{margin-top: 20px;}
+.rmargin15{margin-right: 15px;}
+.lmargin15{margin-left: 15px;}
+.rpad15{padding-right: 15px;}
+.lpad15{padding-left: 15px;}
+.tmargin15{margin-top: 15px;}
+.bmargin20{margin-bottom: 20px;}
+.bmargin15{margin-bottom: 15px;}
+
+/*----------------------------------------------------- ESTILO PARA A PAGINA INICIAL -----------------------------------------------------*/
+.caixa-destaques {
+  display: flex; 
+  justify-content: space-between; 
+  padding: 10px;
+}
+
+.destaque-seccao{
+  flex: 1; 
+  margin: 0 10px;
+  border-radius: 5px; 
+  padding: 20px;
+}
+
+.destaque{
+  border-radius: 5px; 
+  padding: 10px;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+.destaque-titulo{
+  font-size: 1.5rem; 
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.centrado{
+  display: flex; 
+  justify-content: center;
+}
+
+.navbar{
+  position: static;
+  overflow: visible;
+}
+
+.coluna{
+  display: flex;
+  flex-direction: column;
+}

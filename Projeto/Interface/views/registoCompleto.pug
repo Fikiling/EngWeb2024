@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    // Fundo e navbar
+    include componentes/navbar
+    div.um-fundo
+
+    // Barra do topo
+    header.w3-container.w3-white.header-flex
+        h1.header-title.regular Plataforma de Gestão e Disponibilização de Recursos Educativos
+        img.header-logo(src="/imagens/umLogo.png" alt="Uminho logo")
+        
+    // Conteudo da pagina
+    div.conteudo 
+        // Caixa 
+        div.w3-white.caixanormal.arredondado
+            h1.header-title.regular= title
+            p Seja bem vindo #{dados.name} à nossa plataforma de partilha de recursos!
+            p O seu username para efetuar login é: #{dados.username}
+
+
+            h2 Os seus dados de registo:
+            div.conteudo
+                table.w3-green()
+                    tr 
+                        th(style=" width: 100px;") Nome
+                        th(style=" width: 100px;") Username
+                        th(style=" width: 100px;") Email 
+                        th(style=" width: 100px;") Filiação
+                    tr
+                        td(style="text-align: center;") #{dados.name}
+                        td(style="text-align: center;") #{dados.username}
+                        td(style="text-align: center;") #{dados.email}
+                        td(style="text-align: center;") #{dados.filiacao}
+
+            div.conteudo
+                a.w3-button.w3-black.tmargin20(href="/login") Realizar login
+                a.w3-button.w3-black.tmargin20.lmargin20(href="/") Página inicial
+
+    // Footer
+    include componentes/rodape

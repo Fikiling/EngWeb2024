@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    // Fundo e navbar
+    include componentes/navbar
+    div.um-fundo
+    
+    // Header
+    .w3-card-4
+        header.w3-container.w3-white.header-flex
+            h1.header-title.regular Plataforma de Gestão e Disponibilização de Recursos Educativos
+            img.header-logo(src="/imagens/umLogo.png" alt="Uminho logo")
+
+    // Conteudo da pagina
+    div.conteudo 
+        // Caixa 
+        div.w3-white.caixanormal.arredondado
+            form.w3-container(action='/recursos', method='post', enctype='multipart/form-data')
+                h1.regular Adicionar recurso
+                
+                fieldset
+                    legend Metadados
+
+                    div.caixabloco
+                        label Titulo
+                        input.w3-input.w3-round(type="text" name="titulo")
+
+                    div.caixabloco
+                        label Subtitulo
+                        input.w3-input.w3-round(type="text" name="subtitulo")
+
+                    div.caixabloco
+                        label Data de Criacao
+                        input.w3-input.w3-round(type="text" name="dataCriacao")
+
+                    div.caixabloco
+                        label.rmargin15 Tipo
+                        select(name='tipo', required)
+                            option(value='livro') Livro
+                            option(value='artigo') Artigo
+                            option(value='relatorio') Relatório
+                            option(value='other') Outro
+
+                        label.rmargin15.lmargin15 Visibilidade
+                        select(name='visibilidade', required)
+                            option(value='publico') Publico
+                            option(value='privado') Privado
+
+                    div.caixabloco
+                        label.rmargin15 Ficheiros
+                        input(type='file', name='files', multiple)
+
+                if(semfiles)
+                    p(style='color:red') Inserir pelo menos um ficheiro!
+                
+                if(failvazio)
+                    p(style='color:red') Preencher todos os campos!
+
+                button.w3-btn.w3-green.w3-mb-2.tmargin15.rmargin15(type='submit') Upload
+                a.w3-button.w3-black.tmargin15(href="/recursos") Regressar
+
+    // Footer
+    include componentes/rodape

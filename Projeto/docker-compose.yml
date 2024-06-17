@@ -1,0 +1,43 @@
+version: '3'
+services:
+  interface:
+    container_name: container-interface
+    build:
+      context: ./Interface
+      dockerfile: Dockerfile
+    ports: 
+      - "29051:29051"
+    depends_on:
+      - api
+      - authentication
+    links:
+      - api
+      - authentication
+    
+  api:
+    container_name: container-api
+    build:
+      context: ./API
+      dockerfile: Dockerfile
+    ports:
+      - "29050:29050"
+    depends_on:
+      - mongo
+    links:
+      - mongo
+
+  authentication:
+    container_name: container-authentication
+    build:
+      context: ./Authentication
+      dockerfile: Dockerfile
+    ports:
+      - "29052:29052"
+    depends_on:
+      - mongo
+    links:
+      - mongo
+      
+  mongo:
+    container_name: mongoDB
+    image: mongo
